@@ -1,7 +1,7 @@
 const rule = require('../models/rule.model')
 module.exports = {
     getRule: async(req,res,next)=>{
-        let getrule = await rule.findOne().exec()
+        let getrule = await rule.find()
         res.json(getrule)
     },
     createRule: async(req,res,next)=>{
