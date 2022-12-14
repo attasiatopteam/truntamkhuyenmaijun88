@@ -11,7 +11,7 @@ module.exports = (playerId,authorization)=>{
     
     return axios(config)
     .then(function (response) {
-      if(response.data.vipid!="ee4c391a-49f1-481d-89c6-98bc508501e1"){
+      if(response.data.vipid!="63539055-e5e8-4cde-8f03-0af4f73d6d91"){
           var config = {
               method: 'get',
               url: 'https://boapi.jun88.bet/jun88-ims/api/v1/players/'+response.data.playerid+'/cashsummary',
