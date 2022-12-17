@@ -24,13 +24,13 @@ module.exports = {
         return axios(config)
         .then(function (response) {
             let result = response.data
-            result.data.forEach((el)=>{
-                if(el.producttypeid=="ESPORTS" || el.producttypeid=="SPORTS" ){
-                    if(el.winloss>0){
-                        value.push(el.winloss) 
+                result.data.forEach((el)=>{
+                    if(el.producttypeid=="ESPORTS" || el.producttypeid=="SPORTS" ){
+                        if(el.winloss>0){
+                            value.push(el.winloss) 
+                        }
                     }
-                }
-            })
+                })
             value.sort(function(a, b){return b-a})
             return value
         }).catch(function (error) {
