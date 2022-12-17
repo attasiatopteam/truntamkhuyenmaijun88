@@ -6,6 +6,7 @@ const asyncHandller = require('../middlewares/async.middleware')
 const manualadjust = require('../middlewares/manualadjust.middleware')
 const validplayer = require('../middlewares/validplayer.middleware')
 const buyticketcheck = require('../middlewares/buyticketcheck.middleware')
+const promotionModel = require('../models/promotion.model')
 module.exports = {
     gethistory: async(req,res,next)=>{
       finalize = []
@@ -121,8 +122,8 @@ module.exports = {
           score: 0,
           bonus: 0,
           turnover:0,
-          subject: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Hi88",
-          content: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Hi88",
+          subject: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Jun88",
+          content: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Jun88",
           startTime:startTime,
           endTime:endTime
         });

@@ -36,8 +36,8 @@ module.exports = (producttype,roundid,startTime,endTime,url,authorization)=>{
         score: 0,
         bonus: 0,
         turnover:0,
-        subject: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Hi88",
-        content: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Hi88",
+        subject: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Jun88",
+        content: "Bạn chưa đủ điều kiện để nhận khuyến mãi tại Jun88",
         startTime:startTime,
         endTime:endTime
       });
