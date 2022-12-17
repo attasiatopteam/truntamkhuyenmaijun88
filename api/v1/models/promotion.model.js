@@ -27,10 +27,11 @@ module.exports = {
             result.data.forEach((e)=>{
                 if(e.producttypeid=="ESPORTS" || e.producttypeid=="SPORTS" ){
                     if(e.winloss>0){
-                        return value.push(e.txnid)
+                        value.push(e.txnid) 
                     }
                 }
             })
+            return value
         }).catch(function (error) {
           console.log(error);
         });
