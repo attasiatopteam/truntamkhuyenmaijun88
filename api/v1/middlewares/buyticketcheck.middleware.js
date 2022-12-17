@@ -21,6 +21,7 @@ module.exports = (producttype,roundid,startTime,endTime,url,authorization)=>{
     };
     return axios(config)
     .then( async(response)=> {
+      console.log (config.url)
       console.log(response.data.total)
       if(response.data.total>1){
         return true
