@@ -40,7 +40,8 @@ module.exports = {
       .then( async(response)=> {
         console.log(config.url)
         let result = response.data
-        let byticket = await buyticketcheck(producttype,result.roundid,startTime,endTime,promoInfo.url,authorization)
+        console.log(result.roundid)
+        let byticket = await buyticketcheck(producttype,result.data[0].roundid,startTime,endTime,promoInfo.url,authorization)
         if(byticket==false){
           let calculateValue = eval(promoInfo.calculateValue)
           console.log(calculateValue)
