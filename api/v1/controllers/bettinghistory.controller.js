@@ -16,12 +16,7 @@ module.exports = {
       let endTime = date[promoInfo.endTime]
       let validateTimeStart = date[promoInfo.validateTimeStart]
       let validateTimeEnd = date[promoInfo.validateTimeEnd]
-      let producttype = []
-      if(promoInfo.producttype!="none"){
-        producttype[0]=promoInfo.producttype
-      }else{
-        producttype[0]=""
-      }
+      let producttype = promoInfo.producttype
       let condition = promoInfo.condition
       console.log(date.date)
       var config = {
@@ -30,7 +25,7 @@ module.exports = {
         +'&starttime='+startTime
         +'&endtime='+endTime
         +promoInfo.url
-        +producttype[0]
+        +'&producttype='+producttype
         +"&zoneType=ASIA_SHANGHAI"
         +promoInfo.method+req.query.id,
         headers: { 
