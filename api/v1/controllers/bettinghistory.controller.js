@@ -112,7 +112,7 @@ module.exports = {
             failure(res,200,"Quý khách chưa đủ điều kiện nhận khuyên mãi")
           }
         }else{
-          failure(res,200,"Vé cược mua không hợp lệ")
+          failure(res,200,"※ Để tham gia khuyến mãi yêu cầu tối thiểu đặt cược 1 điểm, các vé cược trên bài điện tử hai mặt, vé cược miễn phí đặt cược jackpot, các vé cược hủy bỏ, vé gộp , vô hiệu đều không được tham gia khuyến mãi này.")
         }
       }).catch(function (error) {
         res.json({
