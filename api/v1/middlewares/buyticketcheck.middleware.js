@@ -1,5 +1,5 @@
 const axios = require('axios');
-module.exports = (producttype,rounid,startTime,endTime,url,authorization)=>{
+module.exports = (producttype,roundid,startTime,endTime,url,authorization)=>{
   if(producttype=="EGAME"){
     var config = {
       method: 'get',
@@ -9,7 +9,7 @@ module.exports = (producttype,rounid,startTime,endTime,url,authorization)=>{
       +url
       +'&producttype='+producttype
       +"&zoneType=ASIA_SHANGHAI"
-      +"&roundid="+rounid,
+      +"&roundid="+roundid,
       headers: { 
         'accept': ' */*', 
         'accept-encoding': ' gzip, deflate, br', 
@@ -21,7 +21,6 @@ module.exports = (producttype,rounid,startTime,endTime,url,authorization)=>{
     };
     return axios(config)
     .then( async(response)=> {
-      console.log(response)
       if(response.data.total>1){
         return true
       }else{
