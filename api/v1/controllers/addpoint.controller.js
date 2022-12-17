@@ -47,7 +47,7 @@ module.exports = {
         data : data
       };
       let checkResult = []
-      await manualadjust(validateTimeStart,validateTimeEnd,promoInfo.remark,checkResult,result.data[0].playerid,authorization)
+      await manualadjust(body.validateTimeStart,body.validateTimeEnd,body.remark,checkResult,body.user,authorization)
       console.log(checkResult[0])
       if(checkResult[0]==false){
         axios(config)
