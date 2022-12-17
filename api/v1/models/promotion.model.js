@@ -27,12 +27,11 @@ module.exports = {
             result.data.forEach((el)=>{
                 if(el.producttypeid=="ESPORTS" || el.producttypeid=="SPORTS" ){
                     if(el.winloss>0){
-                        var key = el.txnid
-                        let val = el.winloss
-                        value.push({key:val}) 
+                        value.push(el.winloss) 
                     }
                 }
             })
+            value.sort(function(a, b){return b-a})
             return value
         }).catch(function (error) {
           console.log(error);
