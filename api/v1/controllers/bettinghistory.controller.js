@@ -112,7 +112,7 @@ module.exports = {
             failure(res,200,"Quý khách chưa đủ điều kiện nhận khuyên mãi")
           }
         }else{
-          failure(res,200,"Quý khách chưa đủ điều kiện nhận khuyên mãi")
+          failure(res,200,"Vé cược mua không hợp lệ")
         }
       }).catch(function (error) {
         res.json({
