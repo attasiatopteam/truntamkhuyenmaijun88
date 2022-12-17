@@ -20,7 +20,7 @@ module.exports = {
               'referer': ' https://boapi.jun88.bet/', 
             }
         };
-        
+        console.log(config.url)
         return axios(config)
         .then(function (response) {
             let result = response.data
