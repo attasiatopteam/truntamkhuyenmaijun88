@@ -1,5 +1,6 @@
 const axios = require('axios');
 const autho = require('../middlewares/autholize.middleware')
+const manualadjust = require('../middlewares/manualadjust.middleware')
 module.exports = {
     addpoint: async(req,res,next)=>{
       let authorization = await autho()
@@ -45,18 +46,26 @@ module.exports = {
         },
         data : data
       };
-      
-      axios(config)
-      .then(function (response) {
+      let checkResult = []
+      await manualadjust(validateTimeStart,validateTimeEnd,promoInfo.remark,checkResult,result.data[0].playerid,authorization)
+      console.log(checkResult[0])
+      if(checkResult[0]==false){
+        axios(config)
+        .then(function (response) {
+          res.json({
+            code:200,
+            mess:"success"
+          })
+        }).catch(function (error) {
+          res.json({
+            error
+          })
+        });
+      }else{
         res.json({
           code:200,
-          mess:"success"
+          mess:"Quý khách đã nhận khuyến mãi."
         })
-      })
-      .catch(function (error) {
-        res.json({
-          error
-        })
-      });
+      }
     }
 }
