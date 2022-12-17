@@ -41,7 +41,7 @@ module.exports = {
         console.log(config.url)
         let result = response.data
         let buyticket = await buyticketcheck(producttype,result.data[0].roundid,startTime,endTime,promoInfo.url,authorization)
-        console.log(buyticket)
+        console.log("Is this ticket a bought ticket? "+buyticket)
         if(buyticket==false){
           let calculateValue = eval(promoInfo.calculateValue)
           console.log(calculateValue)
