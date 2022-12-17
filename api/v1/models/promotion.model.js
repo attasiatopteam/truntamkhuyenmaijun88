@@ -24,10 +24,12 @@ module.exports = {
         return axios(config)
         .then(function (response) {
             let result = response.data
-            result.data.forEach((e)=>{
-                if(e.producttypeid=="ESPORTS" || e.producttypeid=="SPORTS" ){
-                    if(e.winloss>0){
-                        value.push(e.txnid) 
+            result.data.forEach((el)=>{
+                if(el.producttypeid=="ESPORTS" || el.producttypeid=="SPORTS" ){
+                    if(el.winloss>0){
+                        var key = el.txnid
+                        let val = el.winloss
+                        value.push({key:val}) 
                     }
                 }
             })
