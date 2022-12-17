@@ -1,6 +1,6 @@
 const axios = require('axios')
 module.exports = {
-    tt08: ()=>{
+    tt08: (startTime,endTime,promoInfo,result,authorization)=>{
         var value = []
         var sport = [] 
         var config = {
