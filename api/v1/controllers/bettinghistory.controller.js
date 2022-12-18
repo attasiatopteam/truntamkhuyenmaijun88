@@ -43,7 +43,7 @@ module.exports = {
         let result = response.data
         let buyticket = await buyticketcheck(producttype,result.data[0].roundid,startTime,endTime,promoInfo.url,result.data[0].betamount,authorization)
         console.log("Is this ticket a bought ticket? "+buyticket)
-        if(buyticket==true && req.query.id=="DZ06"){
+        if(buyticket==true && req.query.promoid=="DZ06"){
           failure(res,200,"※ Để tham gia khuyến mãi yêu cầu tối thiểu đặt cược 1 điểm, các vé cược trên bài điện tử hai mặt, vé cược miễn phí đặt cược jackpot, các vé cược hủy bỏ, vé gộp , vô hiệu đều không được tham gia khuyến mãi này.")
         }else{
           let calculateValue = eval(promoInfo.calculateValue)
