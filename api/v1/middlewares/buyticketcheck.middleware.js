@@ -1,5 +1,5 @@
 const axios = require('axios');
-module.exports = (producttype,roundid,startTime,endTime,url,authorization)=>{
+module.exports = (producttype,roundid,startTime,endTime,url,betamount,authorization)=>{
   if(producttype=="EGAME"){
     var config = {
       method: 'get',
@@ -23,8 +23,11 @@ module.exports = (producttype,roundid,startTime,endTime,url,authorization)=>{
     .then( async(response)=> {
       console.log (config.url)
       console.log(response.data.total)
+      console.log(response.data.summary.betamount+" - "+betamount)
       if(response.data.total>1){
-        return true
+        if(response.data.summary.betamount==betamount){
+          return true
+        }
       }else{
         return false
       }
