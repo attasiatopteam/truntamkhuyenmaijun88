@@ -24,6 +24,7 @@ module.exports = (producttype,roundid,startTime,endTime,url,betamount,authorizat
       console.log (config.url)
       console.log(response.data.total)
       console.log(response.data.summary.betamount+" - "+betamount)
+      console.log(betamount>=50)
       if(response.data.total>1){
         if(betamount>=50){
           return true
