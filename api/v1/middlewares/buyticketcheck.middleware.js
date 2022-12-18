@@ -28,6 +28,8 @@ module.exports = (producttype,roundid,startTime,endTime,url,betamount,authorizat
       if(response.data.total>1){
         if(response.data.summary.betamount==betamount){
           return true
+        }else{
+          return false
         }
       }else{
         return false
