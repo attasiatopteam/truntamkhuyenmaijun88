@@ -73,7 +73,7 @@ module.exports = {
         });
       }else{
         res.json({
-          code:200,
+          code:403,
           mess:"Quý khách đã nhận khuyến mãi."
         })
       }
