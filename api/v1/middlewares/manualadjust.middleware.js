@@ -13,7 +13,7 @@ module.exports = (starttime,endtime,checkValue,checkResult,playerid,authorizatio
     return axios(config)
     .then(function (response) {
         response.data.data.forEach(element => {
-            testcase.push(element.remarks.toUpperCase().replace(/\s/g, ''))
+            testcase.push(element.remarks.replace(/\s/g, ''))
         });
         return response.data
     }).then(()=>{
