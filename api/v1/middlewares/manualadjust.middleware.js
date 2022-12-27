@@ -9,7 +9,7 @@ module.exports = (starttime,endtime,checkValue,checkResult,playerid,authorizatio
         'Cookie': '__cf_bm=mhdBXG.oLIkMHybji3U8Lfju4KbxGkr79SgC4o4ZSxw-1668584499-0-AYTn85IqZMFttET5/lL052CexC1l9ysBtxSt+HCcuBeZGuYOUXoYWh7spKzzC/xe4276iTnlHxgFTu4yM4E/DIY='
     }
     };
-
+    console.log(config.url)
     return axios(config)
     .then(function (response) {
         response.data.data.forEach(element => {
