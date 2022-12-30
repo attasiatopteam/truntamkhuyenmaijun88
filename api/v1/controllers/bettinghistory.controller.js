@@ -87,7 +87,7 @@ module.exports = {
                           }else{
                             score = limitResult
                             console.log("final score: "+score)
-                            success(res,result,score,promoInfo,calculateValue,startTime,endTime)
+                            success(res,result,score,promoInfo,calculateValue,startTime,endTime,validateTimeStart,validateTimeEnd)
                           }
                         }else{
                           failure(res,200,"Quý khách chưa đủ điều kiện nhận khuyên mãi")
@@ -131,7 +131,7 @@ module.exports = {
     }  
 }
 
-function success(res,result,score,promoInfo,calculateValue,startTime,endTime){
+function success(res,result,score,promoInfo,calculateValue,startTime,endTime,validateTimeStart,validateTimeEnd){
   res.json({
     promoName: promoInfo.promoName,
     promotionTile: promoInfo.promotionTile,
@@ -142,7 +142,9 @@ function success(res,result,score,promoInfo,calculateValue,startTime,endTime){
     subject: promoInfo.subject,
     content: promoInfo.content,
     startTime:startTime,
-    endTime:endTime
+    endTime:endTime,
+    validateTimeStart:validateTimeStart,
+    validateTimeEnd:validateTimeEnd
   })
 }
 
